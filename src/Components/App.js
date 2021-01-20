@@ -50,13 +50,14 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingTop: 45,
+    marginTop: 20,
+    paddingTop: 30,
     paddingBottom: 30,
     backgroundImage: `url(${background})`
   },
   headerText: {
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
     marginLeft: 20,
     marginRight: 20,
     color: "white",
