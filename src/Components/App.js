@@ -8,6 +8,7 @@ import PulseLogo from "../resources/PulseLogo.svg";
 import background from "../resources/background";
 import appstore from "../resources/appstore";
 import googleplay from "../resources/googleplay";
+import smartphone from "../resources/smartphone";
 
 const DarkBackground = styled.div`
   display: none; /* Hidden by default */
@@ -33,6 +34,18 @@ const useStyles = makeStyles(theme => ({
     height: "50px",
     width: "auto"
   },
+  bannerText: {
+    marginLeft: "20%",
+    marginRight: "20%",
+    fontFamily: 'FSAlbert, sans-serif',
+    position: 'relative',
+    textAlign: "center",
+    fontWeight: 400,
+    fontSize: '20px',
+    lineHeight: '26px',
+    background: '#fff',
+    color: '#687379'
+  },
   header: {
     display: "flex",
     flexDirection: "column",
@@ -42,8 +55,8 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${background})`
   },
   headerText: {
-    marginTop: 80,
-    marginBottom: 80,
+    marginTop: 20,
+    marginBottom: 20,
     marginLeft: 20,
     marginRight: 20,
     color: "white",
@@ -156,6 +169,12 @@ export default function App() {
       <a href="https://www.prudential.com.sg/wedopulse" target="_blank">
         <img className={classes.logo} src={PulseLogo} title="Pulse" />
       </a>
+      <Grid container direction="column" justify="center" alignItems="center">
+        <p className={classes.bannerText}>
+          Do you remember when was the last time you SMILE and shared with your loved one?
+        </p>
+        <img width="70%" src={smartphone} title="Pulse" />
+      </Grid>
       <div className={classes.header}>
         <p className={classes.headerText}>
           Happiness Campaign by Prudential
@@ -183,10 +202,10 @@ export default function App() {
               </ul>
             </p>
           )) || (
-            <p className={classes.result}>
-              No selfie smile was detected. Please try again.
-            </p>
-          )}
+              <p className={classes.result}>
+                No selfie smile was detected. Please try again.
+              </p>
+            )}
         </Grid>
       )}
       <div className={classes.videoPlayer}>
