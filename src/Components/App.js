@@ -91,6 +91,23 @@ const useStyles = makeStyles(theme => ({
   },
   downloadSectionButton: {
     width: 170
+  },
+  footer: {
+    fontSize: "12px",
+    display: "flex",
+    flexWrap: "nowrap",
+    "-webkit-box-pack": "justify",
+    justifyContent: "space-between",
+    color: "rgb(132, 146, 155) !important",
+    background: "rgb(255, 255, 255)",
+    padding: "1rem 15px 0px"
+  },
+  footerTNC: {
+    padding: "30px 1rem 10px",
+    cursor: "pointer",
+    fontWeight: "bold",
+    color: "rgb(132, 146, 155)",
+    textDecoration: "none"
   }
 }));
 
@@ -119,7 +136,7 @@ export const api = file => {
 export default function App() {
   const classes = useStyles();
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({  });
 
   const onImageUpload = image => {
     setLoading(true);
@@ -153,7 +170,8 @@ export default function App() {
         <Grid container direction="column" justify="center" alignItems="center">
           {(data.status === 200 && (
             <p className={classes.result}>
-              Congratulations! Try our happiness challenge in Pulse:
+              Congratulations! Try our happiness challenge in&nbsp;
+              <a href="#download-now">Pulse</a>:
               <ul>
                 <li>Smile for 15 seconds</li>
                 <li>Watch the 4-minute family challenge</li>
@@ -222,6 +240,38 @@ export default function App() {
           </div>
         </Grid>
       </section>
+      <footer className={classes.footer}>
+        <div>
+          <a href="https://www.prudential.com.sg/wedopulse" target="_blank">
+            <img
+              class="footer-logo"
+              src="https://www.prudential.com.sg/-/media/Prudential/campaigns/pulse/assets/media/brand2x.png"
+              alt="Prudential英國保誠"
+              title="Prudential英國保誠"
+            />
+          </a>
+          <p>
+            © 2021 Prudential Corporation Asia. <span />
+            All Rights Reserved.
+          </p>
+        </div>
+        <div>
+          <a
+            className={classes.footerTNC}
+            href="https://www.prudential.com.sg/wedopulse/tc.aspx"
+            target="_blank"
+          >
+            Terms and Conditions
+          </a>
+          <a
+            className={classes.footerTNC}
+            href="https://www.prudential.com.sg/wedopulse/privacy-notice.aspx"
+            target="_blank"
+          >
+            Privacy Notice
+          </a>
+        </div>
+      </footer>
     </Container>
   );
 }
