@@ -37,17 +37,19 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingTop: 50,
+    paddingTop: 45,
     paddingBottom: 30,
-    height: 250,
     backgroundImage: `url(${background})`
   },
   headerText: {
+    marginTop: 80,
+    marginBottom: 80,
+    marginLeft: 20,
+    marginRight: 20,
     color: "white",
     fontFamily: "FSAlbert, sans-serif",
     textAlign: "center",
-    fontSize: "45px",
-    lineHeight: "75px",
+    fontSize: "40px",
     fontWeight: "700",
     textShadow: "none"
   },
@@ -69,6 +71,7 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   },
   downloadSection: {
+    padding: 25,
     backgroundColor: "#ed1b2e"
   },
   downloadSectionBigText: {
@@ -76,7 +79,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "FSAlbert, sans-serif",
     textAlign: "center",
     fontWeight: 700,
-    fontSize: "40px",
+    fontSize: "35px",
     lineHeight: 1.5,
     fontWeight: "700"
   },
@@ -86,11 +89,11 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "FSAlbert, sans-serif",
     textAlign: "center",
     fontWeight: 500,
-    fontSize: "12px",
+    fontSize: "10px",
     lineHeight: 1.5
   },
   downloadSectionButton: {
-    width: 170
+    width: 150
   },
   footer: {
     fontSize: "12px",
@@ -136,7 +139,7 @@ export const api = file => {
 export default function App() {
   const classes = useStyles();
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({  });
+  const [data, setData] = useState({});
 
   const onImageUpload = image => {
     setLoading(true);
@@ -150,7 +153,7 @@ export default function App() {
   };
   return (
     <Container component="main" maxWidth="md">
-      <a href="https://www.prudential.com.sg/wedopulse">
+      <a href="https://www.prudential.com.sg/wedopulse" target="_blank">
         <img className={classes.logo} src={PulseLogo} title="Pulse" />
       </a>
       <div className={classes.header}>
@@ -203,29 +206,29 @@ export default function App() {
             <br />
             Download Now.
           </h2>
-          <div class="download">
-            <div>
-              <a
-                href="https://apps.apple.com/sg/app/we-do-pulse/id1498404821"
-                target="_blank"
-                alt="Download on the App Store"
-                title="Download on the App Store"
-              >
-                <img className={classes.downloadSectionButton} src={appstore} />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.prudential.pulse.onepulse"
-                target="_blank"
-                alt="Get it on Google Play"
-                title="Get it on Google Play"
-              >
-                <img
-                  className={classes.downloadSectionButton}
-                  src={googleplay}
-                />
-              </a>
-            </div>
-          </div>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <a
+              href="https://apps.apple.com/sg/app/we-do-pulse/id1498404821"
+              target="_blank"
+              alt="Download on the App Store"
+              title="Download on the App Store"
+            >
+              <img className={classes.downloadSectionButton} src={appstore} />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.prudential.pulse.onepulse"
+              target="_blank"
+              alt="Get it on Google Play"
+              title="Get it on Google Play"
+            >
+              <img className={classes.downloadSectionButton} src={googleplay} />
+            </a>
+          </Grid>
 
           <div className={classes.downloadSectionSmallText}>
             <p>
