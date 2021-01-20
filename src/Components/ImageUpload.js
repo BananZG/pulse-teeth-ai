@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 //Card
 import { Button, Grid } from "@material-ui/core";
-import background from "../resources/background";
 import face from "../resources/face";
 
 //Tabs
@@ -27,7 +26,11 @@ const useStyles = makeStyles(theme => ({
     borderRadius: "50%",
     overflow: "hidden"
   },
-  submit: {
+  imageBox3: {
+    width: "100%"
+  },
+  button: {
+    borderRadius: 25,
     margin: theme.spacing(3, 0, 2)
   },
   input: {
@@ -53,11 +56,11 @@ export default function ImageUploadCard({ onImageUpload }) {
   };
 
   return (
-    <Grid container justify="center" alignItems="center">
+    <Grid container direction="column" justify="center" alignItems="center">
       <Grid item>
         <div className={classes.imageBox}>
           <div className={classes.imageBox2}>
-            <img src={selectedImage ?? face} />
+            <img className={classes.imageBox3} src={selectedImage ?? face} />
           </div>
         </div>
       </Grid>
@@ -70,7 +73,12 @@ export default function ImageUploadCard({ onImageUpload }) {
           onChange={handleUploadClick}
         />
         <label htmlFor="contained-button-file">
-          <Button component="span" variant="contained" color="primary">
+          <Button
+            component="span"
+            className={classes.button}
+            variant="contained"
+            color="primary"
+          >
             SUBMIT a selfie
           </Button>
         </label>
