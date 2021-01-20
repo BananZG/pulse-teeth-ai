@@ -213,9 +213,9 @@ export default function App() {
           width="100%"
           height="500"
           src="https://www.youtube-nocookie.com/embed/VsojBgHqeg4?controls=0"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         />
       </div>
       <section id="download-now" className={classes.downloadSection}>
@@ -266,7 +266,6 @@ export default function App() {
         <div>
           <a href="https://www.prudential.com.sg/wedopulse" target="_blank">
             <img
-              class="footer-logo"
               src="https://www.prudential.com.sg/-/media/Prudential/campaigns/pulse/assets/media/brand2x.png"
               alt="Prudential英國保誠"
               title="Prudential英國保誠"
