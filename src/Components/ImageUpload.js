@@ -55,7 +55,7 @@ export default function ImageUploadCard({ onImageUpload }) {
   return (
     <Grid container justify="center" alignItems="center">
       <Grid item>
-        <div className={clases.imageBox}>
+        <div className={classes.imageBox}>
           <div className={classes.imageBox2}>
             <img src={selectedImage ?? face} />
           </div>
